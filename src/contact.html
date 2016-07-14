@@ -1,0 +1,67 @@
+---
+layout: default
+title: "Contact"
+icon: 'mail'
+order: 5
+---
+<section class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h3 class="center-align thin">Contact Us</h3>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="section">
+          <div id="wufoo-z1fey2ft1h18eo0">
+            Fill out my <a href="https://robotxspace.wufoo.com/forms/z1fey2ft1h18eo0">online form</a>.
+          </div>
+          <div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">Online contact and registration forms from <a href="http://www.wufoo.com">Wufoo</a>.</div>
+          <script type="text/javascript">
+            var z1fey2ft1h18eo0;(function(d, t) {
+              var s = d.createElement(t), options = {
+                'userName':'robotxspace',
+                'formHash':'z1fey2ft1h18eo0',
+                'autoResize':true,
+                'height':'832',
+                'async':true,
+                'host':'wufoo.com',
+                'header':'show',
+                'ssl':true
+              };
+              s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+              s.onload = s.onreadystatechange = function() {
+                var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+                try {
+                  z1fey2ft1h18eo0 = new WufooForm();z1fey2ft1h18eo0.initialize(options);z1fey2ft1h18eo0.display();
+                } catch (e) {}
+              };
+              var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+            })(document, 'script');
+          </script>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="section">
+          <div class="social clearfix">
+            <ul>
+              <li><a href="{{ site.facebook-url }}"><img src="/assets/images/social-facebook.svg" alt="Facebook"></a></li>
+              <li><a href="{{ site.twitter-url }}"><img src="/assets/images/social-twitter.svg" alt="Twitter"></a></li>
+              <li><a href="{{ site.instagram-url }}"><img src="/assets/images/social-instagram.svg" alt="Instagram"></a></li>
+              <li><a href="{{ site.meetup-url }}"><img src="/assets/images/social-meetup.svg" alt="Meetup"></a></li>
+            </ul>
+          </div>
+          <div>
+            4500 Great America Parkway<br>
+            Santa Clara, CA 95054<br>
+            {{ site.phone }}<br>
+            <!-- <a class="modal-trigger" href="#contact">{{ site.email }}</a> -->
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

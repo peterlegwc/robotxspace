@@ -1,0 +1,64 @@
+<header class="site-header">
+  <nav>
+    <div class="nav-wrapper">
+      <div class="row">
+        <div class="container">
+          <div class="col s12">
+            <a href="{{ site.baseurl }}/" class="brand-logo"><img class="responsive-img"  src="/assets/images/robotxspace.svg" alt="RobotX Space"></a>
+            <a href="#" data-activates="slide-out-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="main-nav right hide-on-med-and-down">
+              {% assign sorted_pages = site.html_pages | sort:"order" %}
+              {% for my_page in sorted_pages %}
+                {% if my_page.title != "404: Page not found" %}
+                  {% if page.url == my_page.url %}
+                    <li class="active">
+                  {% else %}
+                    <li>
+                  {% endif %}
+                  <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+                </li>
+                {% endif %}
+              {% endfor %}
+              <li><a href="/contact/" class="waves-effect waves-light btn z-depth-0">Apply</a></li>
+            </ul>
+            <ul id="slide-out-menu" class="side-nav">
+              <li>
+                <a href="{{ site.baseurl }}/" class="logo"><img src="/assets/images/robotxspace-x.svg" alt="RobotX Space" class="sidebar-brand center-image"></a>
+              </li>
+              {% for my_page in sorted_pages %}
+                {% if my_page.title != "404: Page not found" and my_page.url != '/' %}
+                {% if page.url == my_page.url %}
+                <li class="active">
+                {% else %}
+                <li>
+                {% endif %}
+                  <a href="{{ my_page.url | prepend: site.baseurl }}">
+                    {% if my_page.icon %}
+                    <i class="material-icons left">{{ my_page.icon }}</i>
+                    {% endif %}
+                    {{ my_page.title }}
+                  </a>
+                </li>
+                {% endif %}
+              {% endfor %}
+              <li><a href="/contact/" class="waves-effect waves-light btn z-depth-0">Apply</a></li>
+              <li>
+                <div class="social clearfix">
+                  <ul>
+                    <li><a href="{{ site.facebook-url }}"><img src="/assets/images/social-facebook.svg" alt="Facebook" class="svg"></a></li>
+                    <li><a href="{{ site.twitter-url }}"><img src="/assets/images/social-twitter.svg" alt="Twitter" class="svg"></a></li>
+                    <li><a href="{{ site.instagram-url }}"><img src="/assets/images/social-instagram.svg" alt="Instagram" class="svg"></a></li>
+                    <li><a href="{{ site.meetup-url }}"><img src="/assets/images/social-meetup.svg" alt="Meetup" class="svg"></a></li>
+                  </ul>
+                </div>
+                <div class="center-align grey-text lighten-2 copyright">
+                  <small>&copy; 2016 RobotX Space. All Rights Reserved</small>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

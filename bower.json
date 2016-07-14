@@ -1,0 +1,19 @@
+{
+  "name": "robotx",
+  "authors": [
+    "Peter Le <peter.le@gwc.net>"
+  ],
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6"
+  }
+}

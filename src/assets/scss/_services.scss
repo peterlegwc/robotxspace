@@ -1,0 +1,7 @@
+.service-card {
+  @media #{$medium-and-up} {
+    h5 {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+<footer class="page-footer mtn">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m5 l6">
+        <img src="/assets/images/robotxspace.svg" alt="RobotX Space" class="responsive-img">
+        <p class="grey-text text-lighten-4">
+          Founded in Beijing, RobotX Space aims to connect professionals in robotics and artificial intelligence to make the world a better place.
+        </p>
+      </div>
+      <div class="col s4 m3 l2 offset-l1">
+        <h6 class="white-text">Navigation</h6>
+        <ul>
+          {% assign sorted_pages = site.html_pages | sort:"order" %}
+          {% for my_page in sorted_pages %}
+            {% if my_page.title != "404: Page not found" %}
+            <li>
+              <a class="grey-text text-lighten-3" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col s8 m4 l3">
+        <h6 class="white-text">Contact</h6>
+        <div class="social clearfix">
+          <ul>
+            <li><a href="{{ site.facebook-url }}"><img src="/assets/images/social-facebook.svg" alt="Facebook" class="svg"></a></li>
+            <li><a href="{{ site.twitter-url }}"><img src="/assets/images/social-twitter.svg" alt="Twitter" class="svg"></a></li>
+            <li><a href="{{ site.instagram-url }}"><img src="/assets/images/social-instagram.svg" alt="Instagram" class="svg"></a></li>
+            <li><a href="{{ site.meetup-url }}"><img src="/assets/images/social-meetup.svg" alt="Meetup" class="svg"></a></li>
+          </ul>
+        </div>
+        <div class="white-text">
+          4500 Great America Parkway<br>
+          Santa Clara, CA 95054<br>
+          {{ site.phone }}<br>
+          <!-- <a class="modal-trigger white-text" href="#contact">{{ site.email }}</a> -->
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      &copy; 2016 {{ site.title }}. All Rights Reserved
+    </div>
+  </div>
+</footer>
+<div id="contact" class="modal">
+  <form action="https://formspree.io/info@robotxspace.com" id="contact-form" method="POST">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col s12">
+          <a class="modal-action modal-close right" href="#!"><i class="material-icons">clear</i></a>
+          <h4 class="blue-text">Get In Touch</h4>
+          <div>
+            <small>Please fill in the required fields and we will get in touch within 24 hours</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="name" name="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" name="_replyto" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="message" name="message" class="materialize-textarea"></textarea>
+          <label for="message">Message</label>
+        </div>
+      </div>
+      <input type="hidden" name="_subject" value="RobotX Space Inquiry">
+      <input type="text" name="_gotcha" style="display:none">
+    </div>
+    <div class="modal-footer">
+      <button class="btn waves-effect waves-light" type="submit" name="submit">Submit
+      </button>
+    </div>
+  </form>
+</div>
+<div class="fixed-action-btn top-btn" style="bottom: 24px; right: 24px;">
+  <a class="btn-floating btn transparent z-depth-1">
+    <i class="material-icons blue-text">keyboard_arrow_up</i>
+  </a>
+</div>

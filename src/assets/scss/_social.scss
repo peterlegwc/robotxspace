@@ -1,0 +1,14 @@
+.social {
+  img, .svg {
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+  }
+  ul li {
+    float: left;
+    margin-right: 16px;
+  }
+  ul li:last-child {
+    margin-right: 0;
+  }
+}

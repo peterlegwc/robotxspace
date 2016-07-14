@@ -1,0 +1,33 @@
+.top-btn {
+  display: none;
+}
+.mtn {
+  margin-top: 0 !important;
+}
+.mbn {
+  margin-bottom: 0 !important;
+}
+.center-block,
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+.full-height {
+  padding-bottom: 2em;
+  padding-top: 2em;
+  @media #{$medium-and-up} {
+    height: 70vh;
+    min-height: 400px;
+  }
+}
+.valign-med {
+  @media #{$medium-and-up} {
+    align-items: center;
+    display: flex;
+  }
+}

@@ -1,0 +1,45 @@
+.main-nav {
+  li a {
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+}
+.side-nav {
+  .sidebar-brand {
+    width: 64px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  i.material-icons {
+    height: $sidenav-item-height;
+    line-height: $sidenav-item-height;
+  }
+  .logo {
+    line-height: normal;
+    height: auto;
+  }
+  li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .social {
+    ul {
+      padding: 0 48px;
+      li {
+        border-bottom: 0;
+      }
+    }
+    a {
+      padding: 0;
+    }
+    img, .svg {
+      line-height: 48px;
+      margin-top: 12px;
+      width: 24px;
+      height: 24px;
+      fill: $sidenav-font-color;
+    }
+  }
+  .copyright {
+    line-height: 2em;
+  }
+}
