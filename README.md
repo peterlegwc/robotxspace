@@ -1,41 +1,33 @@
-# robotx
+# RobotXSpace
 
-> Coworking Space
+Website for the AI and robotics-themed coworking space in Santa Clara, CA. Uses `gulp` build tool and based on `Jekyll`. Built in image compression, BrowserSync, and SASS compilation
 
 ## To get started
 
+To get started, make sure node and ruby are required. Then install with git
+
 ```sh
-$ gulp [--prod]
+git clone https://github.com/peterlegwc/robotxspace.git projectname
+```
+
+Install the needed dependencies:
+
+```ssh
+cd projectname
+npm install
+bundle install
 ```
 
 ## Usage
 
 ```sh
-$ gulp build [--prod]
+$ gulp [--prod]
 ```
 
 ```sh
-$ gulp deploy
+$ gulp build [--prod]
 ```
 
-#### Settings
-In your `_config.yml` and `humans.txt` you should add your Github and Twitter
-profile if you want to.
+## Templating
 
-## Install
-If you have cloned this repo or want to reinstall, make sure there&#39;s no
-`node_modules` or `Gemfile.lock` folder/file and then run `npm install` and
-`bundle install`.
-
-#### Update
-To update: `npm update generator-jekyllized -g`, then run `yo jekyllized:gulp
-[--rsync|amazon|pages]` in this directory. Note that this will overwrite any
-local changes, so back it up.
-
-## Github
-For more information on how to use your new project, please refer to the [README
-on Github](https://github.com/sondr3/generator-jekyllized).
-
-## Owner
-
-> [Peter](http://robotxspace.com)
+The site is built with [Jekyll](https://jekyllrb.com/) using the [Materialize CSS](http://materializecss.com/) front-end framework. For templating, see the [Jekyll docs](https://jekyllrb.com/docs/home/). For styling, see the [Materialize docs](http://materializecss.com/getting-started.html).
