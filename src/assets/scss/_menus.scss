@@ -3,6 +3,10 @@
     font-weight: 200;
     text-transform: uppercase;
   }
+  .menu-apply {
+    box-shadow: inset 0 1px color("red", "darken-4"), inset 0 -1px color("red", "darken-4");
+    background-color: $secondary-color;
+  }
 }
 .side-nav {
   .sidebar-brand {

@@ -7,7 +7,7 @@
   position: relative;
   z-index: 1;
   &::before {
-    background: linear-gradient(to right, rgba(38, 50, 56, 1) 0%, rgba(38, 50, 56, .7) 50%, rgba(38, 50, 56, 0) 100%);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 85%,rgba(0, 0, 0, 1) 100%);
     content: '';
     display: block;
     height: 100%;
@@ -18,6 +18,9 @@
     z-index: -1;
   }
   .content {
+    padding: 0.5em 2em;
+    background: linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 100%);
+    text-shadow: 1px 1px 3px rgba(0,0,0,.5);
     width: 100%;
     .slogan {
       font-size: 2.5em;
@@ -44,7 +47,7 @@
     margin-bottom: 0;
   }
   .stat-title {
-    color: $secondary-color;
+    color: color('blue','base');
     font-size: 1.7em;
     font-weight: 400;
   }
@@ -106,11 +109,47 @@
     }
   }
 }
-.photo-grid {
-  .speaker {
+.network {
+  @media #{$small-and-down} {
+    .col:nth-child(3n+1) {
+      clear: both;
+    }
+  }
+  .card .card-image {
+    z-index: 1;
     overflow: hidden;
-    padding: 0;
-    position: relative;
+    img {
+      transition: all .25s ease-in-out;
+    }
+    &:hover {
+      & img {
+        transform: scale3d(1.2,1.2,1.2);
+      }
+    }
+  }
+  .card .card-image::after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  .card .card-image .card-title {
+    width: 100%;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .66);
+    font-size: 16px;
+    padding: 5px;
+    z-index: 5;
+    @media #{$medium-and-up} {
+      font-size: 20px;
+    }
+  }
+  .card-content {
+    padding: 10px;
   }
   .description {
     .title,
@@ -119,53 +158,6 @@
     }
     .company {
       font-style: italic;
-    }
-  }
-  @media #{$small-and-down} {
-    .speaker:nth-child(3n+1) {
-      clear: both;
-    }
-  }
-  @media #{$medium-and-down} {
-    .title {
-      display: none;
-    }
-  }
-  @media #{$medium-and-up} {
-    img {
-      vertical-align: top;
-    }
-    .description {
-      background: rgba(38, 50, 56, .5);
-      bottom: 0;
-      color: #fff;
-      left: 0;
-      position: absolute;
-      right: 0;
-      .title,
-      .company {
-        font-weight: 200;
-      }
-    }
-  }
-  @media #{$large-and-up} {
-    img {
-      vertical-align: top;
-    }
-    .speaker:hover .description {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
-    }
-    .speaker:hover img {
-      filter: blur(1px);
-    }
-    .description {
-      font-size: 1.3em;
-      opacity: 0;
-      padding: 1em;
-      top: 0;
-      transform: scale3d(2, 2, 2);
-      transition: all .35s;
     }
   }
 }
