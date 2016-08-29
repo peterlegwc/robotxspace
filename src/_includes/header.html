@@ -4,7 +4,7 @@
       <div class="row">
         <div class="container">
           <div class="col s12">
-            <a href="{{ site.baseurl }}" class="brand-logo"><img class="responsive-img"  src="{{ site.baseurl }}assets/images/robotxspace.svg" alt="RobotX Space"></a>
+            <a href="{{ site.baseurl }}/" class="brand-logo"><img class="responsive-img"  src="{{ site.baseurl }}/assets/images/robotxspace.svg" alt="RobotX Space"></a>
             <a href="#" data-activates="slide-out-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="main-nav right hide-on-med-and-down">
               {% assign sorted_pages = site.html_pages | sort:"order" %}
@@ -23,7 +23,7 @@
             </ul>
             <ul id="slide-out-menu" class="side-nav">
               <li>
-                <a href="{{ site.baseurl }}" class="logo"><img src="{{ site.baseurl }}assets/images/robotxspace-x.svg" alt="RobotX Space" class="sidebar-brand center-image"></a>
+                <a href="{{ site.baseurl }}/" class="logo"><img src="{{ site.baseurl }}/assets/images/robotxspace-x.svg" alt="RobotX Space" class="sidebar-brand center-image"></a>
               </li>
               {% for my_page in sorted_pages %}
                 {% if my_page.title != "404: Page not found" and my_page.url != '/' %}
@@ -45,10 +45,10 @@
               <li>
                 <div class="social clearfix">
                   <ul>
-                    <li><a href="{{ site.facebook-url }}"><img src="{{ site.baseurl }}assets/images/social-facebook.svg" alt="Facebook" class="svg"></a></li>
-                    <li><a href="{{ site.twitter-url }}"><img src="{{ site.baseurl }}assets/images/social-twitter.svg" alt="Twitter" class="svg"></a></li>
-                    <li><a href="{{ site.instagram-url }}"><img src="{{ site.baseurl }}assets/images/social-instagram.svg" alt="Instagram" class="svg"></a></li>
-                    <li><a href="{{ site.meetup-url }}"><img src="{{ site.baseurl }}assets/images/social-meetup.svg" alt="Meetup" class="svg"></a></li>
+                    <li><a href="{{ site.facebook-url }}"><img src="{{ site.baseurl }}/assets/images/social-facebook.svg" alt="Facebook" class="svg"></a></li>
+                    <li><a href="{{ site.twitter-url }}"><img src="{{ site.baseurl }}/assets/images/social-twitter.svg" alt="Twitter" class="svg"></a></li>
+                    <li><a href="{{ site.instagram-url }}"><img src="{{ site.baseurl }}/assets/images/social-instagram.svg" alt="Instagram" class="svg"></a></li>
+                    <li><a href="{{ site.meetup-url }}"><img src="{{ site.baseurl }}/assets/images/social-meetup.svg" alt="Meetup" class="svg"></a></li>
                   </ul>
                 </div>
                 <div class="center-align grey-text lighten-2 copyright">

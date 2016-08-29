@@ -3,8 +3,8 @@
 title: RobotX Space
 description: Coworking Space
 url: http://robotxspace.com
-cn-url: http://cn.robotxspace.com
-baseurl: /
+cn-url: cn
+baseurl:
 email: info@robotxspace.com
 phone: (408) 463-6956
 social:
