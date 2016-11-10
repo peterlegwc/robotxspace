@@ -1,4 +1,7 @@
 <header class="site-header">
+  <div class="row mbn lang-select grey darken-4">
+    <div class="col s12">Change Language: <a href="{{ site.url }}/{{ site.cn-url }}{{ page.url }}">中文</a></div>
+  </div>
   <nav>
     <div class="nav-wrapper">
       <div class="row">
@@ -9,36 +12,76 @@
             <ul id="nav-mobile" class="main-nav right hide-on-med-and-down">
               {% assign sorted_pages = site.html_pages | sort:"order" %}
               {% for my_page in sorted_pages %}
-                {% if my_page.title != "404: Page not found" %}
+                {% if my_page.order > 0 %}
                   {% if page.url == my_page.url %}
                     <li class="active">
                   {% else %}
                     <li>
                   {% endif %}
-                  <a href="{{ my_page.url }}">{{ my_page.title }}</a>
+                  {% if my_page.title == 'About' %}
+                    <a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="about-dropdown">{{ my_page.title }} <i class="tiny material-icons right" style="margin-left:0">arrow_drop_down</i></a>
+                  {% elsif my_page.title == 'Events' %}
+                    <a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="events-dropdown">{{ my_page.title }} <i class="tiny material-icons right" style="margin-left:0">arrow_drop_down</i></a>
+                  {% else %}
+                    <a href="{{ my_page.url }}">{{ my_page.title }}</a>
+                  {% endif %}
                 </li>
                 {% endif %}
               {% endfor %}
               <li><a href="{{ site.baseurl }}/contact/" class="waves-effect waves-light btn z-depth-0">Apply</a></li>
+            </ul>
+            <ul id="about-dropdown" class="dropdown-content">
+              <li><a href="/about/">About</a></li>
+              <li><a href="/jobs/">Jobs</a></li>
+            </ul>
+            <ul id="events-dropdown" class="dropdown-content">
+              <li><a href="/events/">Events</a></li>
+              <li><a href="/meetup/">Meetup</a></li>
             </ul>
             <ul id="slide-out-menu" class="side-nav">
               <li>
                 <a href="{{ site.baseurl }}/" class="logo"><img src="{{ site.baseurl }}/assets/images/robotxspace-x.svg" alt="RobotX Space" class="sidebar-brand center-image"></a>
               </li>
               {% for my_page in sorted_pages %}
-                {% if my_page.title != "404: Page not found" and my_page.url != '/' %}
-                {% if page.url == my_page.url %}
-                <li class="active">
-                {% else %}
-                <li>
-                {% endif %}
+                {% if my_page.order > 0 %}
+                  {% if page.url == my_page.url %}
+                  <li class="active">
+                  {% else %}
+                  <li>
+                  {% endif %}
+                  {% if my_page.title == 'About' %}
+                  <ul class="collapsible collapsible-accordion">
+                    <li>
+                      <a class="collapsible-header"><i class="material-icons left">{{ my_page.icon }}</i> About <i class="tiny material-icons right" style="margin-left:0">arrow_drop_down</i></a>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a href="/about/">About</a></li>
+                          <li><a href="/jobs/">Jobs</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  {% elsif my_page.title == 'Events' %}
+                  <ul class="collapsible collapsible-accordion">
+                    <li>
+                      <a class="collapsible-header"><i class="material-icons left">{{ my_page.icon }}</i> Events <i class="tiny material-icons right" style="margin-left:0">arrow_drop_down</i></a>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a href="/events/">Events</a></li>
+                          <li><a href="/meetup/">Meetup</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  {% else %}
                   <a href="{{ my_page.url }}">
                     {% if my_page.icon %}
                     <i class="material-icons left">{{ my_page.icon }}</i>
                     {% endif %}
                     {{ my_page.title }}
                   </a>
-                </li>
+                  {% endif %}
+                  </li>
                 {% endif %}
               {% endfor %}
               <li><a href="{{ site.baseurl }}/contact/" class="waves-effect waves-light btn z-depth-0">Apply</a></li>
@@ -56,7 +99,9 @@
                 </div>
               </li>
             </ul>
-          </div>
+            <!-- <div class="lang-select">
+              <a href="{{ site.url }}/{{ site.cn-url }}{{ page.url }}"><img src="{{ site.baseurl }}/assets/images/flags/cn.svg" alt="Chinese" class="flag"> CN</a>
+            </div> -->
         </div>
       </div>
     </div>

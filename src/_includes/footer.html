@@ -4,24 +4,27 @@
       <div class="col s12 m5 l6">
         <img src="{{ site.baseurl }}/assets/images/robotxspace.svg" alt="RobotX Space" class="logo responsive-img">
         <p class="grey-text text-lighten-4">
-          Founded in Beijing, RobotX Space aims to connect professionals in robotics and artificial intelligence to make the world a better place.
+          RobotX Space is the leading global coworking space focusing on AI. We help entrepreneurs bring concepts to market and provide them with resources to succeed. Based on GWC’s global connections and strong relationships with China, RobotX Space is a powerful cross-border platform connecting China and US.
         </p>
       </div>
       <div class="col s4 m3 l2 offset-l1">
         <h6 class="white-text">Navigation</h6>
         <ul>
+          <li>
+            <a class="grey-text text-lighten-3" href="{{ site.baseurl }}/">Home</a>
+          </li>
           {% assign sorted_pages = site.html_pages | sort:"order" %}
           {% for my_page in sorted_pages %}
-            {% if my_page.title != "404: Page not found" %}
+            {% if my_page.order > 0 %}
             <li>
               <a class="grey-text text-lighten-3" href="{{ my_page.url }}">{{ my_page.title }}</a>
             </li>
             {% endif %}
           {% endfor %}
+          <li>
+            <a class="grey-text text-lighten-3" href="/contact/">Apply</a>
+          </li>
         </ul>
-        <div class="lang-select grey-text text-lighten-3">
-          <img src="{{ site.baseurl }}/assets/images/flags/usa.svg" alt="English" class="flag"> EN / <a href="{{ site.baseurl }}{{ site.cn-url }}{{ page.url }}"><img src="{{ site.baseurl }}/assets/images/flags/cn.svg" alt="Chinese" class="flag"> CN</a>
-        </div>
       </div>
       <div class="col s8 m4 l3">
         <h6 class="white-text">Contact</h6>
@@ -63,20 +66,18 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input id="name" name="name" type="text" class="validate">
+        <div class="input-field col s12 m6">
+          <input type="text" id="name" name="name" class="validate" required>
           <label for="name">Name</label>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" name="_replyto" type="email" class="validate">
-          <label for="email">Email</label>
+        <div class="input-field col s12 m6">
+          <input type="email" id="email" name="_replyto" class="validate" required>
+          <label for="email" data-error="Invalid address">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="message" name="message" class="materialize-textarea"></textarea>
+          <textarea id="message" name="message" class="materialize-textarea" required></textarea>
           <label for="message">Message</label>
         </div>
       </div>
@@ -84,13 +85,15 @@
       <input type="text" name="_gotcha" style="display:none">
     </div>
     <div class="modal-footer">
-      <button class="btn waves-effect waves-light" type="submit" name="submit">Submit
-      </button>
+      <button class="btn waves-effect waves-light" type="submit" name="submit">Submit</button>
     </div>
   </form>
 </div>
-<div class="fixed-action-btn top-btn" style="bottom: 24px; right: 24px;">
+<div class="fixed-action-btn top-btn">
   <a class="btn-floating btn transparent z-depth-1">
     <i class="material-icons blue-text">keyboard_arrow_up</i>
   </a>
+</div>
+<div class="fixed-action-btn sticky-contact">
+  <a class="waves-effect waves-light btn modal-trigger blue-grey lighten-5 blue-grey-text text-darken-3" href="#contact">Contact Us</a>
 </div>

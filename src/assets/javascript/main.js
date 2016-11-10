@@ -2,7 +2,7 @@ $( document ).ready(function(){
   var $contactForm = $('#contact-form');
   var sliderHeight = 100;
   if (window.matchMedia('(max-device-width: 600px)').matches) {
-    sliderHeight = 120;
+    sliderHeight = 130;
   }
   $(".button-collapse").sideNav();
   $('.modal-trigger').leanModal();
@@ -10,40 +10,35 @@ $( document ).ready(function(){
     indicators: false,
     height: sliderHeight
   });
-  $('.materialboxed').materialbox();
-  $('select').material_select();
-  $('.datepicker').pickadate({
-    format: 'mm/dd/yy'
-  });
 
   if (!detectIE()) {
     $('body').addClass('sticky-body');
     $('main').addClass('sticky-main');
   }
 
-  // $contactForm.submit(function(e) {
-  //   e.preventDefault();
-  //   $.ajax({
-  // 		url: '//formspree.io/info@robotxspace.com',
-  // 		method: 'POST',
-  // 		data: $(this).serialize(),
-  // 		dataType: 'json',
-  // 		beforeSend: function() {
-  // 			Materialize.toast('Sending Message...', 1000);
-  // 		},
-  // 		success: function(data) {
-  // 			Materialize.toast('Success! Your message was sent.', 5000, 'green white-text');
-  //       $(':input','#contact-form')
-  //         .not(':button, :submit, :reset, :hidden')
-  //         .val('');
-  //       $('#message').trigger('autoresize');
-  //       $('#contact').closeModal();
-  // 		},
-  // 		error: function(err) {
-  // 			Materialize.toast('There was an error sending your message. Please try again in a few minutes.', 5000, 'red white-text');
-  // 		}
-  // 	});
-  // });
+  $contactForm.submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+  		url: '//formspree.io/info@robotxspace.com',
+  		method: 'POST',
+  		data: $(this).serialize(),
+  		dataType: 'json',
+  		beforeSend: function() {
+  			Materialize.toast('Sending Message...', 1000);
+  		},
+  		success: function(data) {
+  			Materialize.toast('Success! Your message was sent.', 5000, 'green white-text');
+        $(':input','#contact-form')
+          .not(':button, :submit, :reset, :hidden')
+          .val('');
+        $('#message').trigger('autoresize');
+        $('#contact').closeModal();
+  		},
+  		error: function(err) {
+  			Materialize.toast('There was an error sending your message. Please try again in a few minutes.', 5000, 'red white-text');
+  		}
+  	});
+  });
   jQuery('img.svg').each(function(){
     var $img = jQuery(this);
     var imgID = $img.attr('id');
@@ -104,6 +99,7 @@ function initMap() {
       '<div id="bodyContent">'+
       '<p>4500 Great America Parkway<br>'+
       'Santa Clara, CA 95054</p>'+
+      '<p><a href="https://goo.gl/maps/p7HgYQLxHvJ2">Directions</a></p>'+
       '</div>'+
       '</div>';
 
@@ -119,6 +115,7 @@ function initMap() {
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
+  infowindow.open(map, marker);
 }
 
 function detectIE() {

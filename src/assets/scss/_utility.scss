@@ -1,5 +1,17 @@
 .top-btn {
   display: none;
+  bottom: 48px;
+}
+.sticky-contact {
+  bottom: 0;
+  display: none;
+  a {
+    border-radius: 2px 2px 0 0;
+    border-bottom: 2px solid $primary-color;
+  }
+  @media #{$medium-and-up} {
+    display: block;
+  }
 }
 .mtn {
   margin-top: 0 !important;
