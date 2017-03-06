@@ -16,29 +16,32 @@ $( document ).ready(function(){
     $('main').addClass('sticky-main');
   }
 
-  $contactForm.submit(function(e) {
-    e.preventDefault();
-    $.ajax({
-  		url: '//formspree.io/info@robotxspace.com',
-  		method: 'POST',
-  		data: $(this).serialize(),
-  		dataType: 'json',
-  		beforeSend: function() {
-  			Materialize.toast('Sending Message...', 1000);
-  		},
-  		success: function(data) {
-  			Materialize.toast('Success! Your message was sent.', 5000, 'green white-text');
-        $(':input','#contact-form')
-          .not(':button, :submit, :reset, :hidden')
-          .val('');
-        $('#message').trigger('autoresize');
-        $('#contact').closeModal();
-  		},
-  		error: function(err) {
-  			Materialize.toast('There was an error sending your message. Please try again in a few minutes.', 5000, 'red white-text');
-  		}
-  	});
-  });
+  // $contactForm.submit(function(e) {
+  //   e.preventDefault();
+  //   $.ajax({
+  // 		url: '//formspree.io/info@robotxspace.com',
+  // 		method: 'POST',
+  // 		data: $(this).serialize(),
+  // 		dataType: 'json',
+  // 		beforeSend: function() {
+  // 			Materialize.toast('Sending Message...', 1000);
+  // 		},
+  // 		success: function(data) {
+  //       console.log(data);
+  // 			Materialize.toast('Success! Your message was sent.', 5000, 'green white-text');
+  //       $(':input','#contact-form')
+  //         .not(':button, :submit, :reset, :hidden')
+  //         .val('');
+  //       $('#message').trigger('autoresize');
+  //       $('#contact').closeModal();
+  //       $('#name, #email').removeClass('valid');
+  //       Materialize.updateTextFields();
+  // 		},
+  // 		error: function(err) {
+  // 			Materialize.toast('There was an error sending your message. Please try again in a few minutes.', 5000, 'red white-text');
+  // 		}
+  // 	});
+  // });
   jQuery('img.svg').each(function(){
     var $img = jQuery(this);
     var imgID = $img.attr('id');
